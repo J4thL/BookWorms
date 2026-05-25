@@ -9,13 +9,13 @@ define('DB_PORT', getenv('MYSQLPORT') ?: getenv('DB_PORT') ?: '3306');
 function getDB() {
     static $conn = null;
     if ($conn === null) {
-        $conn = new mysqli(
-            DB_HOST,
-            DB_USER,
-            DB_PASS,
-            DB_NAME,
-            (int)DB_PORT
-        );
+$conn = new mysqli(
+    getenv('MYSQLHOST'),
+    getenv('MYSQLUSER'),
+    getenv('MYSQLPASSWORD'),
+    getenv('MYSQLDATABASE'),
+    getenv('MYSQLPORT')
+);
         if ($conn->connect_error) {
             die('<div style="font-family:monospace;padding:20px;background:#1a0000;color:#ff4444;border:1px solid #ff4444;margin:20px;border-radius:8px;">
                 <strong>Database Connection Failed:</strong><br>' . $conn->connect_error . '<br><br>

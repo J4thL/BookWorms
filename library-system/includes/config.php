@@ -16,7 +16,6 @@ function getDB() {
 
     if ($conn === null) {
 
-        // 🔴 HARD CHECK (this prevents silent 500 crashes)
         if (!DB_HOST || !DB_USER || !DB_NAME) {
             die("Missing Railway DB environment variables.");
         }

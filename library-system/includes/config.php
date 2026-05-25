@@ -1,21 +1,8 @@
 <?php
-
-define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
-define('DB_USER', getenv('MYSQLUSER') ?: 'root');
-define('DB_PASS', getenv('MYSQLPASSWORD') ?: '');
-define('DB_NAME', getenv('MYSQLDATABASE') ?: 'library_db');
-define('DB_PORT', getenv('MYSQLPORT') ?: 3306);
-
-function getDB() {
-    static $conn = null;
-    if ($conn === null) {
-        $conn = new mysqli(
-            DB_HOST,
-            DB_USER,
-            DB_PASS,
-            DB_NAME,
-            DB_PORT
-        );
+$SERVER_NAME = getenv('SERVER_NAME');
+$USERNAME = getenv('USERNAME');
+$PASSWORD = getenv('PASSWORD');
+$DB_NAME = getenv('DB_NAME');
         
         if ($conn->connect_error) {
             die('<div style="font-family:monospace;padding:20px;background:#1a0000;color:#ff4444;border:1px solid #ff4444;margin:20px;border-radius:8px;">

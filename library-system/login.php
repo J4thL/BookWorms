@@ -1,6 +1,6 @@
 <?php
 
-require 'your-db-file.php';
+require 'includes/config.php';
 
 $conn = getDB();
 echo "DB Connected!";

@@ -1,7 +1,7 @@
 {
   "name": "library-management-system",
   "version": "1.0.0",
-  "description": "A full-featured library management system",
+  "description": "A library management system",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
